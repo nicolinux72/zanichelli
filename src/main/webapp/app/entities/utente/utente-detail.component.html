@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="utente">
+            <h2><span jhiTranslate="zanichelliApp.utente.detail.title">Utente</span> {{utente.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="zanichelliApp.utente.nome">Nome</span></dt>
+                <dd>
+                    <span>{{utente.nome}}</span>
+                </dd>
+                <dt><span jhiTranslate="zanichelliApp.utente.cognome">Cognome</span></dt>
+                <dd>
+                    <span>{{utente.cognome}}</span>
+                </dd>
+                <dt><span jhiTranslate="zanichelliApp.utente.email">Email</span></dt>
+                <dd>
+                    <span>{{utente.email}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/utente', utente.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
